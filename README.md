@@ -1,3 +1,3 @@
-#Star Citizen advanced graphics configuration tool
+# Star Citizen advanced graphics configuration tool
 
 //TODO
