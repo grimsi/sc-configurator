@@ -1,0 +1,72 @@
+<div layout="column" layout-align="start center">
+    <md-card-content layout="column" layout-align="start start">
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Cache Shadows:</p>
+            <md-switch ng-model="config.experimental.shadowcaching"></md-switch>
+            <md-tooltip md-direction="left">Toggles shadow caching. Can result in higher performance.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Silhoutte:</p>
+            <md-switch ng-model="config.experimental.silhoutte"></md-switch>
+            <md-tooltip md-direction="left">This feature adds more detail to some objects at the cost of a few FPS.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Multi-GPU:</p>
+            <md-switch ng-model="config.experimental.multigpu"></md-switch>
+            <md-tooltip md-direction="left">Toggles Multi-GPU support.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Navigation-System Multithreading:</p>
+            <md-switch ng-model="config.experimental.multithreading.navigation"></md-switch>
+            <md-tooltip md-direction="left">Toggles own thread for navigation.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Particle Multithreading:</p>
+            <md-switch ng-model="config.experimental.multithreading.particle"></md-switch>
+            <md-tooltip md-direction="left">Toggles own thread for particle calculations.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Sub-Object Mesh Multithreading:</p>
+            <md-switch ng-model="config.experimental.multithreading.subobject_mesh"></md-switch>
+            <md-tooltip md-direction="left">Toggles own thread for sub-object mesh calculations.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Threaded Rendering while Loading:</p>
+            <md-switch ng-model="config.experimental.multithreading.threadedwhileloading"></md-switch>
+            <md-tooltip md-direction="left">Toggles threaded rendering while the game is loading.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <span class="md-select-text option-text">Number of Physics-Threads:</span>
+            <md-input-container>
+                <input ng-model="config.experimental.multithreading.physicthreads" type="number" min="1">
+            </md-input-container>
+            <md-tooltip md-direction="left">Sets the number of internal physics-threads. Higher number can result in more performance but will be less stable.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Job System:</p>
+            <md-switch ng-model="config.experimental.multithreading.jobsystem"></md-switch>
+            <md-tooltip md-direction="left">Toggles wether to start new jobs in own threads (disabled) or worker threads (enabled).</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <span class="md-select-text option-text">Index of Main-Thread Core:</span>
+            <md-input-container>
+                <input ng-model="config.experimental.cores.mainthread" type="number" min="0">
+            </md-input-container>
+            <md-tooltip md-direction="left">Sets the core on which the main thread runs.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <span class="md-select-text option-text">Index of Physics-Thread Core:</span>
+            <md-input-container>
+                <input ng-model="config.experimental.cores.physicsthread" type="number" min="0">
+            </md-input-container>
+            <md-tooltip md-direction="left">Sets the core on which the physics thread runs.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <span class="md-select-text option-text">Index of I/O-Thread Core:</span>
+            <md-input-container>
+                <input ng-model="config.experimental.cores.iothread" type="number" min="0">
+            </md-input-container>
+            <md-tooltip md-direction="left">Sets the core on which the i/o thread runs.</md-tooltip>
+        </div>
+    </md-card-content>
+</div>

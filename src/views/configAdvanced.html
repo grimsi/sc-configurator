@@ -1,0 +1,47 @@
+<div layout="column" layout-align="start center">
+    <md-card-content layout="column" layout-align="start start">
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Tessellation:</p>
+            <md-slider min="1" max="20" ng-model="config.advanced.tessellation.quality"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the tessellation quality. Higher value means better quality.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.advanced.tessellation.quality" min="1" max="20">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Pre-Render Tessellation:</p>
+            <md-switch ng-model="config.advanced.tessellation.prerendering"></md-switch>
+            <md-tooltip md-direction="right">Toggles pre-rendering for tessellation. Use only on high-end GPUs.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Hardware Tessellation Support:</p>
+            <md-switch ng-model="config.advanced.tessellation.hardwarerendering"></md-switch>
+            <md-tooltip md-direction="right">Toggles hardware rendering for tessellation. Use on newer PCs.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Level of Detail:</p>
+            <md-select ng-model="config.advanced.lod">
+                <md-tooltip md-direction="right">Sets the general level of detail in the game.</md-tooltip>
+                <md-option value="4">Low</md-option>
+                <md-option value="6">Medium</md-option>
+                <md-option value="20">High</md-option>
+                <md-option value="40">Very High</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Multi-Core CPU Support:</p>
+            <md-switch ng-model="config.advanced.multicore"></md-switch>
+            <md-tooltip md-direction="right">Toggles multi-core support. Use on newer PCs.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Physics GPU:</p>
+            <md-select ng-model="config.advanced.physicsgpu">
+                <md-tooltip md-direction="right">Sets the GPU on which the physics are calculated (default: 1). Only change when using Multi-GPU systems.</md-tooltip>
+                <md-option value="1">1</md-option>
+                <md-option value="2">2</md-option>
+                <md-option value="3">2</md-option>
+                <md-option value="4">4</md-option>
+            </md-select>
+        </div>
+    </md-card-content>
+</div>
