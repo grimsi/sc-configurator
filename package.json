@@ -1,0 +1,41 @@
+{
+  "name": "Star-Citizen-Configurator",
+  "productName": "sc-configurator",
+  "version": "0.0.1-SNAPSHOT",
+  "author": "Simon Grimme",
+  "license": "MIT",
+  "description": "Config Tool for advanced Graphics Options in Star Citizen",
+  "scripts": {
+    "build": "node ./npm-scripts/build.js && uglifyjs ./src/app.js -o ./build/app.js -c",
+    "deploy": "node ./npm-scripts/deploy.js",
+    "start": "http-server"
+  },
+  "keywords": [
+    "Star Citizen",
+    "Graphics",
+    "Menu",
+    "Options",
+    "Configuarator",
+    "Tool"
+  ],
+  "devDependencies": {
+    "ftp-client": "^0.2.2",
+    "jsftp": "^2.0.0",
+    "uglify-js": "^3.1.7",
+    "uglify-js2": "^2.1.11"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.6.5",
+    "angular-cookies": "^1.6.5",
+    "angular-material": "^1.1.1",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.5.8",
+    "angular-sanitize": "^1.6.5",
+    "angular-ui-router": "^0.3.1",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.14.1"
+  }
+}

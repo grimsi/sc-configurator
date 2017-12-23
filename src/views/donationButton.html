@@ -1,0 +1,20 @@
+<md-dialog>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Support my Work</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="F7FWD2N7LLLZE">
+                    <input type="image" src="src/png/paypal_button.png" border="0" name="submit" alt="Donate">
+                </form>
+            </div>
+        </md-dialog-content>
+</md-dialog>

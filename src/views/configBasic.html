@@ -1,0 +1,224 @@
+<div layout="column" layout-align="start center">
+    <md-card-content layout="column" layout-align="start start">
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Fullscreen Mode:</p>
+            <md-select ng-model="config.screen.mode">
+                <md-tooltip md-direction="right">Sets the mode at which the game is displayed on your screen.</md-tooltip>
+                <md-option value="window">Window</md-option>
+                <md-option value="borderless">Borderless Window</md-option>
+                <md-option value="fullscreen">Fullscreen</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Resolution:</p>
+            <md-select ng-model="config.screen.resolution.preset">
+                <md-tooltip md-direction="right">Sets the Resolution at which the game is rendered.</md-tooltip>
+                <md-option value="320x240">320×240</md-option>
+                <md-option value="480x320">480×320</md-option>
+                <md-option value="640x480">640×480 </md-option>
+                <md-option value="800x480">800×480</md-option>
+                <md-option value="1024x600">1024×600</md-option>
+                <md-option value="1280x720">1280×720</md-option>
+                <md-option value="1024x768">1024×768</md-option>
+                <md-option value="1366x768">1366×768</md-option>
+                <md-option value="1200x900">1200×900</md-option>
+                <md-option value="1440x900">1440×900</md-option>
+                <md-option value="1920x1080">1920×1080</md-option>
+                <md-option value="1920x1200">1920×1200</md-option>
+                <md-option value="2560x1440">2560×1440</md-option>
+                <md-option value="2560x1600">2560×1600</md-option>
+                <md-option value="3840x2160">3840×2160</md-option>
+                <md-option value="4096x2160">4096×2160</md-option>
+                <md-option value="custom">Custom</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center" ng-show="config.screen.resolution.preset == 'custom'">
+            <span class="md-select-text option-text"></span>
+            <md-input-container class="short">
+                <input ng-model="config.screen.resolution.custom.x" type="number" min="1" style="text-align: center;" class="no-arrows">
+                <md-tooltip md-direction="bottom">X-Resolution</md-tooltip>
+            </md-input-container>
+            <span style="width:50px;text-align: center;">×</span>
+            <md-input-container class="short">
+                <input ng-model="config.screen.resolution.custom.y" type="number" min="1" style="text-align: center;" class="no-arrows">
+                <md-tooltip md-direction="bottom">Y-Resolution</md-tooltip>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <span class="md-select-text option-text">FPS Limit:</span>
+            <md-input-container>
+                <input ng-model="config.screen.maxfps" type="number" min="0">
+                <md-tooltip md-direction="right">Sets the maximum FPS at which the game is rendered. Set to 0 for unlimited FPS.</md-tooltip>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Vertical Sync</p>
+            <md-switch ng-model="config.screen.vsync"></md-switch>
+            <md-tooltip md-direction="right">Toggles V-Sync. V-Sync prevents tearing.</md-tooltip>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Field of View:</p>
+            <md-slider min="25" max="160" step="1" ng-model="config.screen.fov"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the ingame FOV. A higher value lets the game display more content on your screen, but may result in lower FPS.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.screen.fov" min="25" max="160">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Mouse Acceleration:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.screen.mouse.acceleration"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the mouse acceleration. Higher value means higher acceleration.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.screen.mouse.acceleration" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Mouse Smoothing:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.screen.mouse.smoothing"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the mouse smoothing. Higher value means more smoothing.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.screen.mouse.smoothing" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Texture Quality:</p>
+            <md-select ng-model="config.graphics.texturequality">
+                <md-tooltip md-direction="right">Sets the resolution of the textures used in the game.</md-tooltip>
+                <md-option value="128">Very Low</md-option>
+                <md-option value="256">Low</md-option>
+                <md-option value="512">Medium</md-option>
+                <md-option value="1024">High</md-option>
+                <md-option value="2048">Very High</md-option>
+                <md-option value="4096">Ultra</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Shadow Quality:</p>
+            <md-select ng-model="config.graphics.shadow.quality">
+                <md-tooltip md-direction="right">Sets the resolution of the shadows rendered ingame.</md-tooltip>
+                <md-option value="0">Very Low</md-option>
+                <md-option value="1">Low</md-option>
+                <md-option value="2">Medium</md-option>
+                <md-option value="3">High</md-option>
+                <md-option value="4">Very High</md-option>
+                <md-option value="5">Ultra</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Shadow Blur:</p>
+            <md-slider min="0" max="1" step="0.1" ng-model="config.graphics.shadow.blur"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the blurriness of the shadows rendered ingame. Higher value means more blur.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.shadow.blur" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Ambient Occlusion:</p>
+            <md-select ng-model="config.graphics.ssdo">
+                <md-tooltip md-direction="right">Sets the quality of SSDO.</md-tooltip>
+                <md-option value="0">Low</md-option>
+                <md-option value="1">Medium</md-option>
+                <md-option value="2">High</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Anti-Aliasing:</p>
+            <md-select ng-model="config.graphics.antialiasing">
+                <md-tooltip md-direction="right">Sets the quality of Anti-Aliasing.</md-tooltip>
+                <md-option value="0">No AA</md-option>
+                <md-option value="1">FXAA</md-option>
+                <md-option value="2">SMAA</md-option>
+                <md-option value="3">MSAA</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Anisotropic Filtering:</p>
+            <md-select ng-model="config.graphics.anisotropicfilter">
+                <md-tooltip md-direction="right">Sets the quality of Anisotropic Filtering.</md-tooltip>
+                <md-option value="2">2x</md-option>
+                <md-option value="4">4x</md-option>
+                <md-option value="8">8x</md-option>
+                <md-option value="16">16x</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Sharpening:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.sharpness"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the sharpness of the game. Higher value means sharper image.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.sharpness" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Motion Blur:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.motionblur"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the motion blur. Higher value means more motion blur.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.motionblur" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Depth of Field:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.depthoffield"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the depth of field. Higher value means more blur.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.depthoffield" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Radial Blur:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.radialblur"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the radial blur. Higher value means more radial blur.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.radialblur" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">HDR Brightness:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.hdr.brightness"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the brightness in HRD Mode. Higher value means brighter image.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.hdr.brightness" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">HDR Bloom:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.hdr.bloom"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the bloom in HRD Mode. Higher value means more bloom.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.hdr.bloom" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">HUD Headbobbing:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.hud.headbobbing"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the headbobbing of the HUD. Higher value means more headbobbing.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.hud.headbobbing" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Chromatic Aberration:</p>
+            <md-slider min="0" max="1" step="0.01" ng-model="config.graphics.filter.chromaticaberration"></md-slider>
+            <md-tooltip md-direction="right" class="padding-right">Sets the chromatic aberration value. Higher value means more chromatic aberration.</md-tooltip>
+            <md-input-container class="short md-select-text">
+                <input type="number" ng-model="config.graphics.filter.chromaticaberration" min="0" max="1">
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="md-select-text option-text">Reflection Quality:</p>
+            <md-select ng-model="config.graphics.reflections">
+                <md-tooltip md-direction="right">Sets the quality of reflections.</md-tooltip>
+                <md-option value="0">Low</md-option>
+                <md-option value="1">Medium</md-option>
+                <md-option value="2">High</md-option>
+                <md-option value="3">Very High</md-option>
+            </md-select>
+        </div>
+        <div layout="row" layout-align="start center">
+            <p class="padding-right option-text">Color Grading</p>
+            <md-switch ng-model="config.graphics.filter.colorgrading"></md-switch>
+            <md-tooltip md-direction="right">Toggles Color Grading. Turning it off may result in higher FPS but also in duller colors.</md-tooltip>
+        </div>
+    </md-card-content>
+</div>

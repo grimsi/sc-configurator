@@ -1,0 +1,31 @@
+<md-card-title layout="column" layout-align="center center" class="no-border-bottom">
+    <div layout="row" layout-align="start center">
+        <p class="padding-right">Mode:</p>
+        <md-radio-group ng-model="mode.current" layout="row" layout-align="space-around start" required>
+            <md-radio-button value="0">Basic</md-radio-button>
+            <md-radio-button value="1">Advanced</md-radio-button>
+            <md-radio-button value="2">Experimental</md-radio-button>
+        </md-radio-group>
+    </div>
+    <div layout="column" layout-align="start center">
+        <span ng-show="mode.current == 0" class="success small"><i class="material-icons md-14">check_circle</i>Basic options are pretty safe to use.</span>
+        <span ng-show="mode.current == 1" class="warning small"><i class="material-icons md-14">warning</i>Advanced options can sometimes cause glitches and/or lead to crashes. Use with caution.</span>
+        <span ng-show="mode.current == 2" class="error small"><i class="material-icons md-14">error</i>Experimental options will usually cause glitches and/or lead to crashes. Use only if you know what you're doing.</span>
+    </div>
+    <div layout="row" layout-align="start center">
+        <p class="md-select-text">Preset:</p>
+        <md-select ng-model="preset.current" placeholder="Choose Preset" ng-change="setPreset(preset.current)" required>
+            <md-tooltip md-direction="bottom">Choose your general preset. This will pre-configure all options for you.</md-tooltip>
+            <md-option value="low">Low</md-option>
+            <md-option value="high">High</md-option>
+            <md-option value="veryhigh">Very High</md-option>
+            <md-option value="ultra">Ultra</md-option>
+        </md-select>
+    </div>
+</md-card-title>
+<md-card-content layout="column" layout-align="start center">
+    <div layout="column" layout-align="start center" ng-show="debug">
+        {{config}}
+        <md-button ng-click="log(config)">Log Config</md-button>
+    </div>
+</md-card-content>
